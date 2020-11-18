@@ -36,18 +36,17 @@ let questionValues = [100, 200, 300, 400, 500];
  */
 function renderQuestions() {
   for (let i = 0; i < categories.length; i++) {
+    let cells=""
     for (const number of questionValues) {
-      console.log(number);
-      "<div class='question'><div class='question-cell'>" +
-        number +
-        "</div></div>";
-      $("#questions").append(
-        "<div class='questions-column'><div class='question-cell' data-category='" +
-          i +
-          "'>" +
-          number +
-          "</div></div>"
-      );
+      
+cells+= "<div class='question-cell' data-category='" +
+         i +
+         "'>" +
+         number +
+         "</div>";
+
     }
+    //console.log(i);
+   $("#questions").append('<div class="questions-column">'+cells+'</div>');
   }
 }
